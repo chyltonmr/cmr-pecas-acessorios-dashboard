@@ -1,0 +1,12 @@
+{
+    "produtos": [
+      { "id": 1, "nome": "Lâmpada H4", "preco": 10.75 },
+      { "id": 2, "nome": "Lâmpada HB4", "preco": 12.99 },
+      { "id": 3, "nome": "Lâmpada H8", "preco": 12.90 }
+    ],
+    "clientes": [
+      { "id": 1, "nome": "João", "email": "joao@email.com" },
+      { "id": 2, "nome": "Maria", "email": "maria@email.com" }
+    ]
+  }
+  
