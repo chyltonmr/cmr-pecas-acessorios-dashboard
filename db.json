@@ -1,12 +1,40 @@
 {
-    "produtos": [
-      { "id": 1, "nome": "Lâmpada H4", "preco": 10.75 },
-      { "id": 2, "nome": "Lâmpada HB4", "preco": 12.99 },
-      { "id": 3, "nome": "Lâmpada H8", "preco": 12.90 }
-    ],
-    "clientes": [
-      { "id": 1, "nome": "João", "email": "joao@email.com" },
-      { "id": 2, "nome": "Maria", "email": "maria@email.com" }
-    ]
-  }
-  
+  "produtos": [
+    {
+         "id": "02",
+          "code": "zzDFDFFDF1",
+          "name": "DFEE Band",
+          "description": "DFFD Description",
+          "image": "blue-band.jpg",
+          "price": 87,
+          "category": "Fitness",
+          "quantity": 2,
+          "inventoryStatus": "CFDFFGRGR",
+          "rating": 4
+    },
+    {
+          "id": "1002",
+          "code": "zz21cz3c1",
+          "name": "Blue Band",
+          "description": "Product Description",
+          "image": "blue-band.jpg",
+          "price": 79,
+          "category": "Fitness",
+          "quantity": 2,
+          "inventoryStatus": "LOWSTOCK",
+          "rating": 3
+    }
+  ],
+  "clientes": [
+    {
+      "id": 1,
+      "nome": "João",
+      "email": "joao@email.com"
+    },
+    {
+      "id": 2,
+      "nome": "Maria",
+      "email": "maria@email.com"
+    }
+  ]
+}

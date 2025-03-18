@@ -1,4 +1,4 @@
-import { Product, ProductService } from './../../service/product.service';
+
 import { Component, OnInit, signal, ViewChild } from '@angular/core';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { Table, TableModule } from 'primeng/table';
@@ -19,6 +19,8 @@ import { TagModule } from 'primeng/tag';
 import { InputIconModule } from 'primeng/inputicon';
 import { IconFieldModule } from 'primeng/iconfield';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { EstoqueService, Product } from '../../service/estoque.service';
+import { ProductService } from '../../service/product.service';
 
 interface Column {
     field: string;
@@ -36,7 +38,7 @@ interface ExportColumn {
     standalone: true,
     templateUrl: './estoque.component.html',
     styleUrl: './estoque.component.scss',
-     imports: [
+    imports: [
         CommonModule,
         TableModule,
         FormsModule,
@@ -56,13 +58,13 @@ interface ExportColumn {
         IconFieldModule,
         ConfirmDialogModule
     ],
-    providers: [MessageService, ProductService, ConfirmationService]
+    providers: [MessageService, ProductService, ConfirmationService, EstoqueService]
 })
 export class EstoqueComponent implements OnInit {
 
     productDialog: boolean = false;
 
-    products = signal<Product[]>([]);
+    produtos = signal<Product[]>([]);
 
     product!: Product;
 
@@ -79,9 +81,9 @@ export class EstoqueComponent implements OnInit {
     cols!: Column[];
 
     constructor(
-        private productService: ProductService,
         private messageService: MessageService,
-        private confirmationService: ConfirmationService
+        private confirmationService: ConfirmationService,
+        private estoque: EstoqueService
     ) { }
 
     exportCSV() {
@@ -89,13 +91,21 @@ export class EstoqueComponent implements OnInit {
     }
 
     ngOnInit() {
+
+        this.estoque.obterProdutos().subscribe(
+            (data) => {
+                this.produtos.set(data);
+                console.log('Dados recebidos:', data);
+            },
+            (error) => {
+                console.error('Erro ao buscar dados:', error);
+            }
+        );
+
         this.loadDemoData();
     }
 
     loadDemoData() {
-        this.productService.getProducts().then((data) => {
-            this.products.set(data);
-        });
 
         this.statuses = [
             { label: 'INSTOCK', value: 'instock' },
@@ -135,7 +145,7 @@ export class EstoqueComponent implements OnInit {
             header: 'Confirm',
             icon: 'pi pi-exclamation-triangle',
             accept: () => {
-                this.products.set(this.products().filter((val) => !this.selectedProducts?.includes(val)));
+                this.produtos.set(this.produtos().filter((val) => !this.selectedProducts?.includes(val)));
                 this.selectedProducts = null;
                 this.messageService.add({
                     severity: 'success',
@@ -158,7 +168,7 @@ export class EstoqueComponent implements OnInit {
             header: 'Confirm',
             icon: 'pi pi-exclamation-triangle',
             accept: () => {
-                this.products.set(this.products().filter((val) => val.id !== product.id));
+                this.produtos.set(this.produtos().filter((val) => val.id !== product.id));
                 this.product = {};
                 this.messageService.add({
                     severity: 'success',
@@ -172,8 +182,8 @@ export class EstoqueComponent implements OnInit {
 
     findIndexById(id: string): number {
         let index = -1;
-        for (let i = 0; i < this.products().length; i++) {
-            if (this.products()[i].id === id) {
+        for (let i = 0; i < this.produtos().length; i++) {
+            if (this.produtos()[i].id === id) {
                 index = i;
                 break;
             }
@@ -206,11 +216,11 @@ export class EstoqueComponent implements OnInit {
 
     saveProduct() {
         this.submitted = true;
-        let _products = this.products();
+        let _products = this.produtos();
         if (this.product.name?.trim()) {
             if (this.product.id) {
                 _products[this.findIndexById(this.product.id)] = this.product;
-                this.products.set([..._products]);
+                this.produtos.set([..._products]);
                 this.messageService.add({
                     severity: 'success',
                     summary: 'Successful',
@@ -226,7 +236,7 @@ export class EstoqueComponent implements OnInit {
                     detail: 'Product Created',
                     life: 3000
                 });
-                this.products.set([..._products, this.product]);
+                this.produtos.set([..._products, this.product]);
             }
 
             this.productDialog = false;
