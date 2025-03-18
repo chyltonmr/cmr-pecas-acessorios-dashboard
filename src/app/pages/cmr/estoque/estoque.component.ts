@@ -203,11 +203,11 @@ export class EstoqueComponent implements OnInit {
 
     getSeverity(status: string) {
         switch (status) {
-            case 'INSTOCK':
+            case 'Em estoque':
                 return 'success';
-            case 'LOWSTOCK':
+            case 'Baixo estoque':
                 return 'warn';
-            case 'OUTOFSTOCK':
+            case 'Sem estoque':
                 return 'danger';
             default:
                 return 'info';

@@ -3,27 +3,39 @@
     {
          "id": "02",
           "code": "zzDFDFFDF1",
-          "name": "DFEE Band",
+          "name": "Led Rayx Small H1",
           "description": "DFFD Description",
           "image": "blue-band.jpg",
-          "price": 87,
+          "price": 85,
           "category": "Fitness",
           "quantity": 2,
-          "inventoryStatus": "CFDFFGRGR",
+          "inventoryStatus": "Em estoque",
           "rating": 4
     },
     {
           "id": "1002",
           "code": "zz21cz3c1",
-          "name": "Blue Band",
-          "description": "Product Description",
+          "name": "Led Diamond H4",
+          "description": "Led Diamond H4",
           "image": "blue-band.jpg",
-          "price": 79,
+          "price": 170,
           "category": "Fitness",
           "quantity": 2,
-          "inventoryStatus": "LOWSTOCK",
+          "inventoryStatus": "Sem estoque",
           "rating": 3
-    }
+    },
+    {
+      "id": "03",
+       "code": "DF33FFF",
+       "name": "Led X-Treme H7",
+       "description": "Led X-Treme H7",
+       "image": "blue-band.jpg",
+       "price": 143,
+       "category": "Fitness",
+       "quantity": 2,
+       "inventoryStatus": "Baixo estoque",
+       "rating": 4
+ }
   ],
   "clientes": [
     {
