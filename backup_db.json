@@ -90,7 +90,7 @@
         {
           "id": 2,
           "nome": "imposto ICMS ST",
-          "preco": 8.0
+          "preco": 7.50
         }
       ]
     },
@@ -132,12 +132,12 @@
         {
           "id": 1,
           "nome": "imposto IPI",
-          "preco": 3.50
+          "preco": 2.50
         },
         {
           "id": 2,
           "nome": "imposto ICMS ST",
-          "preco": 8.0
+          "preco": 7.0
         }
       ]
     }

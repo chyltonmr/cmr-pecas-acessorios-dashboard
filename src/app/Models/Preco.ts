@@ -5,4 +5,5 @@ export class Preco {
     precoPj?: number;
     precoPf?: number;
     produto?: Produto;
+    ativo: boolean = false;
 }
