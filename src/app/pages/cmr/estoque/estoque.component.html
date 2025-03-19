@@ -29,6 +29,10 @@
             <th style="width: 3rem">
                 <p-tableHeaderCheckbox />
             </th>
+            <th pSortableColumn="marca.nome" style="min-width:16rem">
+                Marca
+                <p-sortIcon field="name" />
+            </th>
             <th style="min-width: 16rem">Código</th>
             <th pSortableColumn="name" style="min-width:16rem">
                 Nome
@@ -59,6 +63,7 @@
             <td style="width: 3rem">
                 <p-tableCheckbox [value]="product" />
             </td>
+            <td style="min-width: 12rem">{{ product.marca.nome }}</td>
             <td style="min-width: 12rem">{{ product.code }}</td>
             <td style="min-width: 16rem">{{ product.nome }}</td>
             <td>
@@ -86,8 +91,8 @@
 <p-dialog [(visible)]="productDialog" [style]="{ width: '450px' }" header="Product Details" [modal]="true">
     <ng-template #content>
         <div class="flex flex-col gap-6">
-            <img [src]="'https://primefaces.org/cdn/primeng/images/demo/product/' + produto.imagem" [alt]="produto.imagem"
-                class="block m-auto pb-4" *ngIf="produto.imagem" />
+            <img [src]="'https://primefaces.org/cdn/primeng/images/demo/product/' + produto.imagem"
+                [alt]="produto.imagem" class="block m-auto pb-4" *ngIf="produto.imagem" />
             <div>
                 <label for="name" class="block font-bold mb-3">Name</label>
                 <input type="text" pInputText id="name" [(ngModel)]="produto.nome" required autofocus fluid />
