@@ -55,6 +55,14 @@
                 Custo
                 <p-sortIcon field="price" />
             </th>
+            <th pSortableColumn="preco.lucroLiquido" style="min-width: 8rem">
+                Liquido
+                <p-sortIcon field="price" />
+            </th>
+            <th pSortableColumn="preco.margemLucro.margem" style="min-width: 8rem">
+                Margem
+                <p-sortIcon field="price" />
+            </th>
             <th pSortableColumn="preco.statusEstoque" style="min-width: 12rem">
                 Status estoque
                 <p-sortIcon field="inventoryStatus" />
@@ -92,6 +100,14 @@
             <td>
                 <span *ngFor="let p of product.custos">
                     <span *ngIf="p.ativo">{{ p.preco | currency: 'BRL' : 'symbol' }}</span>
+                </span>
+            </td>
+            <td>
+                <span>{{ product.lucroLiquido | currency: 'BRL' : 'symbol' }}</span>
+            </td>
+            <td>
+                <span *ngFor="let p of product.preco">
+                    <span *ngIf="p.ativo">{{ p.margemLucro.margem }}%</span>
                 </span>
             </td>
             <td>
