@@ -1,4 +1,5 @@
 import { Categoria } from "./Categoria";
+import { Marca } from "./Marca";
 
 export interface Produto {
     id?: string;
@@ -11,6 +12,7 @@ export interface Produto {
     categoria?: Categoria;
     imagem?: string;
     avaliacao?: number;
+    marca?: Marca;
 }
 
 

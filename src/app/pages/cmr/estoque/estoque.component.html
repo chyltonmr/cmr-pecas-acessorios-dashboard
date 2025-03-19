@@ -68,7 +68,7 @@
             <td>{{ product.preco | currency: 'BRL' : 'symbol' }} </td>
             <td>{{ product.categoria.nome }}</td>
             <td>
-                <p-rating [(ngModel)]="product.rating" [readonly]="true" />
+                <p-rating [(ngModel)]="product.avaliacao" [readonly]="true" />
             </td>
             <td>
                 <p-tag [value]="product.statusEstoque" [severity]="getSeverity(product.statusEstoque)" />
