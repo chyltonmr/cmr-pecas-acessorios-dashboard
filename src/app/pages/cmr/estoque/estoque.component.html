@@ -51,6 +51,10 @@
                 Preço PF
                 <p-sortIcon field="price" />
             </th>
+            <th pSortableColumn="preco.custo.ativo" style="min-width: 8rem">
+                Custo
+                <p-sortIcon field="price" />
+            </th>
             <th pSortableColumn="preco.statusEstoque" style="min-width: 12rem">
                 Status estoque
                 <p-sortIcon field="inventoryStatus" />
@@ -83,6 +87,11 @@
             <td>
                 <span *ngFor="let p of product.preco">
                     <span *ngIf="p.ativo">{{ p.precoPf | currency: 'BRL' : 'symbol' }}</span>
+                </span>
+            </td>
+            <td>
+                <span *ngFor="let p of product.custos">
+                    <span *ngIf="p.ativo">{{ p.preco | currency: 'BRL' : 'symbol' }}</span>
                 </span>
             </td>
             <td>
