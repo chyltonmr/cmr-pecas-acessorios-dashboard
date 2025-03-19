@@ -66,7 +66,7 @@
                     [alt]="product.nome" style="width: 64px" class="rounded" />
             </td>
             <td>{{ product.preco | currency: 'BRL' : 'symbol' }} </td>
-            <td>{{ product.categoria }}</td>
+            <td>{{ product.categoria.nome }}</td>
             <td>
                 <p-rating [(ngModel)]="product.rating" [readonly]="true" />
             </td>

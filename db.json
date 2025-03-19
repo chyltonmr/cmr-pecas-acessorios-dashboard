@@ -1,41 +1,53 @@
 {
   "produtos": [
     {
-         "id": "02",
-          "code": "zzDFDFFDF1",
-          "nome": "Led Rayx Small H1",
-          "descricao": "DFFD Description",
-          "imagem": "blue-band.jpg",
-          "preco": 85,
-          "categoria": "Fitness",
-          "quantidade": 2,
-          "statusEstoque": "Em estoque",
-          "avaliacao": 4
+      "id": "02",
+      "code": "zzDFDFFDF1",
+      "nome": "Led Rayx Small H1",
+      "descricao": "DFFD Description",
+      "imagem": "blue-band.jpg",
+      "preco": 85,
+      "categoria": {
+        "id": "feeefef333",
+        "nome": "Lampada de led",
+        "descricao": "campo descricao"
+      },
+      "quantidade": 2,
+      "statusEstoque": "Em estoque",
+      "avaliacao": 4
     },
     {
-          "id": "1002",
-          "code": "zz21cz3c1",
-          "nome": "Led Diamond H4",
-          "descricao": "Led Diamond H4",
-          "imagem": "blue-band.jpg",
-          "preco": 170,
-          "categoria": "Fitness",
-          "quantidade": 2,
-          "statusEstoque": "Sem estoque",
-          "avaliacao": 3
+      "id": "1002",
+      "code": "zz21cz3c1",
+      "nome": "Led Diamond H4",
+      "descricao": "Led Diamond H4",
+      "imagem": "blue-band.jpg",
+      "preco": 170,
+      "categoria": {
+        "id": "feeefef333",
+        "nome": "Lampada de led",
+        "descricao": "campo descricao"
+      },
+      "quantidade": 2,
+      "statusEstoque": "Sem estoque",
+      "avaliacao": 3
     },
     {
       "id": "03",
-       "code": "DF33FFF",
-       "nome": "Led X-Treme H7",
-       "descricao": "Led X-Treme H7",
-       "imagem": "blue-band.jpg",
-       "preco": 143,
-       "categoria": "Fitness",
-       "quantidade": 2,
-       "statusEstoque": "Baixo estoque",
-       "avaliacao": 4
- }
+      "code": "DF33FFF",
+      "nome": "Led X-Treme H7",
+      "descricao": "Led X-Treme H7",
+      "imagem": "blue-band.jpg",
+      "preco": 143,
+      "categoria": {
+        "id": "feeefef333",
+        "nome": "Lampada de led",
+        "descricao": "campo descricao"
+      },
+      "quantidade": 2,
+      "statusEstoque": "Baixo estoque",
+      "avaliacao": 4
+    }
   ],
   "clientes": [
     {
