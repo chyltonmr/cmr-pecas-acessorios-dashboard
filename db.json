@@ -6,7 +6,6 @@
       "nome": "Led Rayx Small H1",
       "descricao": "DFFD Description",
       "imagem": "blue-band.jpg",
-      "preco": 85,
       "quantidade": 2,
       "statusEstoque": "Em estoque",
       "avaliacao": 4,
@@ -18,6 +17,11 @@
       "marca": {
         "id": "f3ff33",
         "nome": "Rayx"
+      },
+      "preco": {
+        "id": "05233",
+        "precoPj": 85,
+        "precoPf": 150
       }
     },
     {
@@ -26,7 +30,6 @@
       "nome": "Led Diamond H4",
       "descricao": "Led Diamond H4",
       "imagem": "blue-band.jpg",
-      "preco": 170,
       "quantidade": 2,
       "statusEstoque": "Sem estoque",
       "avaliacao": 3,
@@ -38,6 +41,11 @@
       "marca": {
         "id": "32f3ff33",
         "nome": "TIGER AUTO"
+      },
+      "preco": {
+        "id": "3233",
+        "precoPj": 170,
+        "precoPf": 295
       }
     },
     {
@@ -46,7 +54,6 @@
       "nome": "Led X-Treme H7",
       "descricao": "Led X-Treme H7",
       "imagem": "blue-band.jpg",
-      "preco": 143,
       "quantidade": 2,
       "statusEstoque": "Baixo estoque",
       "avaliacao": 4,
@@ -58,6 +65,11 @@
       "marca": {
         "id": "xxf2f3f3ff33",
         "nome": "AUTOVEX"
+      },
+      "preco": {
+        "id": "55233",
+        "precoPj": 145,
+        "precoPf": 210
       }
     }
   ],

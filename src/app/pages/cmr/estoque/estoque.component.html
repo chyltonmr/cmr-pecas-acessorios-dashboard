@@ -43,8 +43,8 @@
                 <p-sortIcon field="name" />
             </th>
             <th>Imagem</th>
-            <th pSortableColumn="preco" style="min-width: 8rem">
-                Preço
+            <th pSortableColumn="preco.precoPj" style="min-width: 8rem">
+                Preço PJ
                 <p-sortIcon field="price" />
             </th>
             <th pSortableColumn="avaliacao" style="min-width: 12rem">
@@ -71,7 +71,7 @@
                 <img [src]="'https://primefaces.org/cdn/primeng/images/demo/product/' + product.imagem"
                     [alt]="product.nome" style="width: 64px" class="rounded" />
             </td>
-            <td>{{ product.preco | currency: 'BRL' : 'symbol' }} </td>
+            <td>{{ product.preco.precoPj | currency: 'BRL' : 'symbol' }} </td>
             <td>
                 <p-rating [(ngModel)]="product.avaliacao" [readonly]="true" />
             </td>
@@ -137,8 +137,8 @@
 
             <div class="grid grid-cols-12 gap-4">
                 <div class="col-span-6">
-                    <label for="price" class="block font-bold mb-3">Price</label>
-                    <p-inputnumber id="price" [(ngModel)]="produto.preco" mode="currency" currency="USD" locale="en-US"
+                    <label for="price" class="block font-bold mb-3">Preço</label>
+                    <p-inputnumber id="price" [(ngModel)]="produto.preco" mode="currency" currency="BRL" locale="pt-BR"
                         fluid />
                 </div>
                 <div class="col-span-6">
