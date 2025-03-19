@@ -12,7 +12,7 @@
       "avaliacao": 4,
       "categoria": {
         "id": "feeefef333",
-        "nome": "Lampada de led",
+        "nome": "A Lampada de led",
         "descricao": "campo descricao"
       },
       "marca": {
@@ -32,7 +32,7 @@
       "avaliacao": 3,
       "categoria": {
         "id": "feeefef333",
-        "nome": "Lampada de led",
+        "nome": "B Lampada de led",
         "descricao": "campo descricao"
       },
       "marca": {
@@ -52,7 +52,7 @@
       "avaliacao": 4,
       "categoria": {
         "id": "feeefef333",
-        "nome": "Lampada de led",
+        "nome": "C Lampada de led",
         "descricao": "campo descricao"
       },
       "marca": {

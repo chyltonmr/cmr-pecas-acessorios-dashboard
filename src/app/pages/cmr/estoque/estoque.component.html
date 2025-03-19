@@ -33,21 +33,21 @@
                 Marca
                 <p-sortIcon field="name" />
             </th>
+            <th pSortableColumn="categoria.nome" style="min-width:10rem">
+                Categoria
+                <p-sortIcon field="category" />
+            </th>
             <th style="min-width: 16rem">Código</th>
-            <th pSortableColumn="name" style="min-width:16rem">
+            <th pSortableColumn="nome" style="min-width:16rem">
                 Nome
                 <p-sortIcon field="name" />
             </th>
             <th>Imagem</th>
-            <th pSortableColumn="price" style="min-width: 8rem">
+            <th pSortableColumn="preco" style="min-width: 8rem">
                 Preço
                 <p-sortIcon field="price" />
             </th>
-            <th pSortableColumn="category" style="min-width:10rem">
-                Categoria
-                <p-sortIcon field="category" />
-            </th>
-            <th pSortableColumn="rating" style="min-width: 12rem">
+            <th pSortableColumn="avaliacao" style="min-width: 12rem">
                 Avaliações
                 <p-sortIcon field="rating" />
             </th>
@@ -64,6 +64,7 @@
                 <p-tableCheckbox [value]="product" />
             </td>
             <td style="min-width: 12rem">{{ product.marca.nome }}</td>
+            <td>{{ product.categoria.nome }}</td>
             <td style="min-width: 12rem">{{ product.code }}</td>
             <td style="min-width: 16rem">{{ product.nome }}</td>
             <td>
@@ -71,7 +72,6 @@
                     [alt]="product.nome" style="width: 64px" class="rounded" />
             </td>
             <td>{{ product.preco | currency: 'BRL' : 'symbol' }} </td>
-            <td>{{ product.categoria.nome }}</td>
             <td>
                 <p-rating [(ngModel)]="product.avaliacao" [readonly]="true" />
             </td>
