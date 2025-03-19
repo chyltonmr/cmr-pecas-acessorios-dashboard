@@ -51,13 +51,13 @@
                 Preço PF
                 <p-sortIcon field="price" />
             </th>
+            <th pSortableColumn="preco.statusEstoque" style="min-width: 12rem">
+                Status estoque
+                <p-sortIcon field="inventoryStatus" />
+            </th>
             <th pSortableColumn="avaliacao" style="min-width: 12rem">
                 Avaliações
                 <p-sortIcon field="rating" />
-            </th>
-            <th pSortableColumn="inventoryStatus" style="min-width: 12rem">
-                Status estoque
-                <p-sortIcon field="inventoryStatus" />
             </th>
             <th style="min-width: 12rem"></th>
         </tr>
@@ -86,10 +86,10 @@
                 </span>
             </td>
             <td>
-                <p-rating [(ngModel)]="product.avaliacao" [readonly]="true" />
+                <p-tag [value]="product.statusEstoque" [severity]="getSeverity(product.statusEstoque)" />
             </td>
             <td>
-                <p-tag [value]="product.statusEstoque" [severity]="getSeverity(product.statusEstoque)" />
+                <p-rating [(ngModel)]="product.avaliacao" [readonly]="true" />
             </td>
             <td>
                 <p-button icon="pi pi-pencil" class="mr-2" [rounded]="true" [outlined]="true"
