@@ -19,8 +19,8 @@ import { TagModule } from 'primeng/tag';
 import { InputIconModule } from 'primeng/inputicon';
 import { IconFieldModule } from 'primeng/iconfield';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
-import { EstoqueService, Product } from '../../service/estoque.service';
-import { ProductService } from '../../service/product.service';
+import { EstoqueService } from '../../service/estoque.service';
+import {Produto} from '../../../Models/Produto'
 
 interface Column {
     field: string;
@@ -58,17 +58,17 @@ interface ExportColumn {
         IconFieldModule,
         ConfirmDialogModule
     ],
-    providers: [MessageService, ProductService, ConfirmationService, EstoqueService]
+    providers: [MessageService, ConfirmationService, EstoqueService]
 })
 export class EstoqueComponent implements OnInit {
 
     productDialog: boolean = false;
 
-    produtos = signal<Product[]>([]);
+    produtos = signal<Produto[]>([]);
 
-    product!: Product;
+    produto!: Produto;
 
-    selectedProducts!: Product[] | null;
+    selectedProducts!: Produto[] | null;
 
     submitted: boolean = false;
 
@@ -115,10 +115,10 @@ export class EstoqueComponent implements OnInit {
 
         this.cols = [
             { field: 'code', header: 'Code', customExportHeader: 'Product Code' },
-            { field: 'name', header: 'Name' },
-            { field: 'image', header: 'Image' },
-            { field: 'price', header: 'Price' },
-            { field: 'category', header: 'Category' }
+            { field: 'nome', header: 'nome' },
+            { field: 'imagem', header: 'imagem' },
+            { field: 'preco', header: 'preco' },
+            { field: 'categoria', header: 'categoria' }
         ];
 
         this.exportColumns = this.cols.map((col) => ({ title: col.header, dataKey: col.field }));
@@ -129,13 +129,13 @@ export class EstoqueComponent implements OnInit {
     }
 
     openNew() {
-        this.product = {};
+        this.produto = {};
         this.submitted = false;
         this.productDialog = true;
     }
 
-    editProduct(product: Product) {
-        this.product = { ...product };
+    editProduct(product: Produto) {
+        this.produto = { ...product };
         this.productDialog = true;
     }
 
@@ -162,14 +162,14 @@ export class EstoqueComponent implements OnInit {
         this.submitted = false;
     }
 
-    deleteProduct(product: Product) {
+    deleteProduct(product: Produto) {
         this.confirmationService.confirm({
-            message: 'Are you sure you want to delete ' + product.name + '?',
+            message: 'Are you sure you want to delete ' + product.nome + '?',
             header: 'Confirm',
             icon: 'pi pi-exclamation-triangle',
             accept: () => {
                 this.produtos.set(this.produtos().filter((val) => val.id !== product.id));
-                this.product = {};
+                this.produto = {};
                 this.messageService.add({
                     severity: 'success',
                     summary: 'Successful',
@@ -217,9 +217,9 @@ export class EstoqueComponent implements OnInit {
     saveProduct() {
         this.submitted = true;
         let _products = this.produtos();
-        if (this.product.name?.trim()) {
-            if (this.product.id) {
-                _products[this.findIndexById(this.product.id)] = this.product;
+        if (this.produto.nome?.trim()) {
+            if (this.produto.id) {
+                _products[this.findIndexById(this.produto.id)] = this.produto;
                 this.produtos.set([..._products]);
                 this.messageService.add({
                     severity: 'success',
@@ -228,19 +228,19 @@ export class EstoqueComponent implements OnInit {
                     life: 3000
                 });
             } else {
-                this.product.id = this.createId();
-                this.product.image = 'product-placeholder.svg';
+                this.produto.id = this.createId();
+                this.produto.imagem = 'product-placeholder.svg';
                 this.messageService.add({
                     severity: 'success',
                     summary: 'Successful',
                     detail: 'Product Created',
                     life: 3000
                 });
-                this.produtos.set([..._products, this.product]);
+                this.produtos.set([..._products, this.produto]);
             }
 
             this.productDialog = false;
-            this.product = {};
+            this.produto = {};
         }
     }
 

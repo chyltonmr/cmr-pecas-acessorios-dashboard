@@ -3,38 +3,38 @@
     {
          "id": "02",
           "code": "zzDFDFFDF1",
-          "name": "Led Rayx Small H1",
-          "description": "DFFD Description",
-          "image": "blue-band.jpg",
-          "price": 85,
-          "category": "Fitness",
-          "quantity": 2,
-          "inventoryStatus": "Em estoque",
-          "rating": 4
+          "nome": "Led Rayx Small H1",
+          "descricao": "DFFD Description",
+          "imagem": "blue-band.jpg",
+          "preco": 85,
+          "categoria": "Fitness",
+          "quantidade": 2,
+          "statusEstoque": "Em estoque",
+          "avaliacao": 4
     },
     {
           "id": "1002",
           "code": "zz21cz3c1",
-          "name": "Led Diamond H4",
-          "description": "Led Diamond H4",
-          "image": "blue-band.jpg",
-          "price": 170,
-          "category": "Fitness",
-          "quantity": 2,
-          "inventoryStatus": "Sem estoque",
-          "rating": 3
+          "nome": "Led Diamond H4",
+          "descricao": "Led Diamond H4",
+          "imagem": "blue-band.jpg",
+          "preco": 170,
+          "categoria": "Fitness",
+          "quantidade": 2,
+          "statusEstoque": "Sem estoque",
+          "avaliacao": 3
     },
     {
       "id": "03",
        "code": "DF33FFF",
-       "name": "Led X-Treme H7",
-       "description": "Led X-Treme H7",
-       "image": "blue-band.jpg",
-       "price": 143,
-       "category": "Fitness",
-       "quantity": 2,
-       "inventoryStatus": "Baixo estoque",
-       "rating": 4
+       "nome": "Led X-Treme H7",
+       "descricao": "Led X-Treme H7",
+       "imagem": "blue-band.jpg",
+       "preco": 143,
+       "categoria": "Fitness",
+       "quantidade": 2,
+       "statusEstoque": "Baixo estoque",
+       "avaliacao": 4
  }
   ],
   "clientes": [
