@@ -47,6 +47,10 @@
                 Preço PJ
                 <p-sortIcon field="price" />
             </th>
+            <th pSortableColumn="preco.precoPf" style="min-width: 8rem">
+                Preço PF
+                <p-sortIcon field="price" />
+            </th>
             <th pSortableColumn="avaliacao" style="min-width: 12rem">
                 Avaliações
                 <p-sortIcon field="rating" />
@@ -74,6 +78,11 @@
             <td>
                 <span *ngFor="let p of product.preco">
                     <span *ngIf="p.ativo">{{ p.precoPj | currency: 'BRL' : 'symbol' }}</span>
+                </span>
+            </td>
+            <td>
+                <span *ngFor="let p of product.preco">
+                    <span *ngIf="p.ativo">{{ p.precoPf | currency: 'BRL' : 'symbol' }}</span>
                 </span>
             </td>
             <td>
