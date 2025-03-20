@@ -5,7 +5,7 @@
       "code": "zzDFDFFDF1",
       "nome": "Led Rayx Small H1",
       "descricao": "DFFD Description",
-      "imagem": "blue-band.jpg",
+      "imagem": "blue-t-shirt.jpg",
       "quantidade": 2,
       "statusEstoque": "Em estoque",
       "avaliacao": 4,
@@ -21,38 +21,52 @@
       "preco": [
         {
           "id": "05233",
+          "codProduto": "02",
           "precoPj": 85,
           "precoPf": 150,
           "data": "01/03/204",
-          "ativo": false
+          "ativo": false,
+          "margemLucro": {
+            "id": "8765",
+            "margem": 40
+          }
         },
         {
           "id": "05233",
+          "codProduto": "02",
           "precoPj": 86,
           "precoPf": 155,
           "data": "01/03/2025",
-          "ativo": true
+          "ativo": true,
+          "margemLucro": {
+            "id": "0765",
+            "margem": 30
+          }
         }
       ],
       "custos": [
         {
           "id": 1,
+          "codProduto": "02",
           "nome": "imposto IPI",
-          "preco": 3.50
+          "preco": 4.50,
+          "ativo": true
         },
         {
           "id": 2,
+          "codProduto": "02",
           "nome": "imposto ICMS ST",
-          "preco": 8.0
+          "preco": 8.0,
+          "ativo": false
         }
       ]
     },
     {
-      "id": "1002",
+      "id": "03",
       "code": "zz21cz3c1",
       "nome": "Led Diamond H4",
       "descricao": "Led Diamond H4",
-      "imagem": "blue-band.jpg",
+      "imagem": "blue-t-shirt.jpg",
       "quantidade": 2,
       "statusEstoque": "Sem estoque",
       "avaliacao": 3,
@@ -68,38 +82,52 @@
       "preco": [
         {
           "id": "05233",
+          "codProduto": "03",
           "precoPj": 85,
           "precoPf": 150,
           "data": "01/03/204",
-          "ativo": false
+          "ativo": false,
+          "margemLucro": {
+            "id": "984",
+            "margem": 44
+          }
         },
         {
           "id": "05233",
+          "codProduto": "03",
           "precoPj": 86,
           "precoPf": 155,
           "data": "01/03/2025",
-          "ativo": true
+          "ativo": true,
+          "margemLucro": {
+            "id": "4484",
+            "margem": 44
+          }
         }
       ],
       "custos": [
         {
           "id": 1,
+          "codProduto": "03",
           "nome": "imposto IPI",
-          "preco": 3.50
+          "preco": 6.50,
+          "ativo": true
         },
         {
           "id": 2,
+          "codProduto": "03",
           "nome": "imposto ICMS ST",
-          "preco": 7.50
+          "preco": 8.0,
+          "ativo": false
         }
       ]
     },
     {
-      "id": "03",
+      "id": "04",
       "code": "DF33FFF",
       "nome": "Led X-Treme H7",
       "descricao": "Led X-Treme H7",
-      "imagem": "blue-band.jpg",
+      "imagem": "blue-t-shirt.jpg",
       "quantidade": 2,
       "statusEstoque": "Baixo estoque",
       "avaliacao": 4,
@@ -115,29 +143,43 @@
       "preco": [
         {
           "id": "05233",
+          "codProduto": "04",
           "precoPj": 85,
           "precoPf": 150,
           "data": "01/03/204",
-          "ativo": false
+          "ativo": false,
+          "margemLucro": {
+            "id": "ccee84",
+            "margem": 41
+          }
         },
         {
           "id": "05233",
+          "codProduto": "04",
           "precoPj": 86,
           "precoPf": 155,
           "data": "01/03/2025",
-          "ativo": true
+          "ativo": true,
+          "margemLucro": {
+            "id": "c44e84",
+            "margem": 87
+          }
         }
       ],
       "custos": [
         {
           "id": 1,
+          "codProduto": "04",
           "nome": "imposto IPI",
-          "preco": 2.50
+          "preco": 9.50,
+          "ativo": true
         },
         {
           "id": 2,
+          "codProduto": "04",
           "nome": "imposto ICMS ST",
-          "preco": 7.0
+          "preco": 8.0,
+          "ativo": false
         }
       ]
     }

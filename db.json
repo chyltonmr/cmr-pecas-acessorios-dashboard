@@ -1,199 +1,42 @@
 {
   "produtos": [
     {
-      "id": "02",
+      "id": "01",
       "code": "zzDFDFFDF1",
-      "nome": "Led Rayx Small H1",
+      "nome": "A Led Rayx Small H1",
       "descricao": "DFFD Description",
       "imagem": "blue-t-shirt.jpg",
       "quantidade": 2,
       "statusEstoque": "Em estoque",
       "avaliacao": 4,
-      "categoria": {
-        "id": "feeefef333",
-        "nome": "A Lampada de led",
-        "descricao": "campo descricao"
-      },
-      "marca": {
-        "id": "f3ff33",
-        "nome": "Rayx"
-      },
-      "preco": [
-        {
-          "id": "05233",
-          "codProduto": "02",
-          "precoPj": 85,
-          "precoPf": 150,
-          "data": "01/03/204",
-          "ativo": false,
-          "margemLucro": {
-            "id": "8765",
-            "margem": 40
-          }
-        },
-        {
-          "id": "05233",
-          "codProduto": "02",
-          "precoPj": 86,
-          "precoPf": 155,
-          "data": "01/03/2025",
-          "ativo": true,
-          "margemLucro": {
-            "id": "0765",
-            "margem": 30
-          }
-        }
-      ],
-      "custos": [
-        {
-          "id": 1,
-          "codProduto": "02",
-          "nome": "imposto IPI",
-          "preco": 4.50,
-          "ativo": true
-        },
-        {
-          "id": 2,
-          "codProduto": "02",
-          "nome": "imposto ICMS ST",
-          "preco": 8.0,
-          "ativo": false
-        }
-      ]
+      "categoria": "A Lampada de led",
+      "marca": "Rayx",
+      "precoPj": "85",
+      "precoPf": "150",
+      "custos": 60.0,
+      "liquidoPj": 42,
+      "liquidoPf": 80,
+      "margemPj": 37,
+      "margemPf": 47
     },
     {
-      "id": "03",
-      "code": "zz21cz3c1",
-      "nome": "Led Diamond H4",
-      "descricao": "Led Diamond H4",
+      "id": "02",
+      "code": "dddDFDFFDF1",
+      "nome": "B Led Diamond h7",
+      "descricao": "camop descricao led diamond h7",
       "imagem": "blue-t-shirt.jpg",
       "quantidade": 2,
       "statusEstoque": "Sem estoque",
-      "avaliacao": 3,
-      "categoria": {
-        "id": "feeefef333",
-        "nome": "B Lampada de led",
-        "descricao": "campo descricao"
-      },
-      "marca": {
-        "id": "32f3ff33",
-        "nome": "TIGER AUTO"
-      },
-      "preco": [
-        {
-          "id": "05233",
-          "codProduto": "03",
-          "precoPj": 85,
-          "precoPf": 150,
-          "data": "01/03/204",
-          "ativo": false,
-          "margemLucro": {
-            "id": "984",
-            "margem": 44
-          }
-        },
-        {
-          "id": "05233",
-          "codProduto": "03",
-          "precoPj": 86,
-          "precoPf": 155,
-          "data": "01/03/2025",
-          "ativo": true,
-          "margemLucro": {
-            "id": "4484",
-            "margem": 44
-          }
-        }
-      ],
-      "custos": [
-        {
-          "id": 1,
-          "codProduto": "03",
-          "nome": "imposto IPI",
-          "preco": 6.50,
-          "ativo": true
-        },
-        {
-          "id": 2,
-          "codProduto": "03",
-          "nome": "imposto ICMS ST",
-          "preco": 8.0,
-          "ativo": false
-        }
-      ]
-    },
-    {
-      "id": "04",
-      "code": "DF33FFF",
-      "nome": "Led X-Treme H7",
-      "descricao": "Led X-Treme H7",
-      "imagem": "blue-t-shirt.jpg",
-      "quantidade": 2,
-      "statusEstoque": "Baixo estoque",
-      "avaliacao": 4,
-      "categoria": {
-        "id": "feeefef333",
-        "nome": "C Lampada de led",
-        "descricao": "campo descricao"
-      },
-      "marca": {
-        "id": "xxf2f3f3ff33",
-        "nome": "AUTOVEX"
-      },
-      "preco": [
-        {
-          "id": "05233",
-          "codProduto": "04",
-          "precoPj": 85,
-          "precoPf": 150,
-          "data": "01/03/204",
-          "ativo": false,
-          "margemLucro": {
-            "id": "ccee84",
-            "margem": 41
-          }
-        },
-        {
-          "id": "05233",
-          "codProduto": "04",
-          "precoPj": 86,
-          "precoPf": 155,
-          "data": "01/03/2025",
-          "ativo": true,
-          "margemLucro": {
-            "id": "c44e84",
-            "margem": 87
-          }
-        }
-      ],
-      "custos": [
-        {
-          "id": 1,
-          "codProduto": "04",
-          "nome": "imposto IPI",
-          "preco": 9.50,
-          "ativo": true
-        },
-        {
-          "id": 2,
-          "codProduto": "04",
-          "nome": "imposto ICMS ST",
-          "preco": 8.0,
-          "ativo": false
-        }
-      ]
-    }
-  ],
-  "clientes": [
-    {
-      "id": 1,
-      "nome": "João",
-      "email": "joao@email.com"
-    },
-    {
-      "id": 2,
-      "nome": "Maria",
-      "email": "maria@email.com"
+      "avaliacao": 5,
+      "categoria": "B Lampada de led",
+      "marca": "Rayx",
+      "precoPj": "170",
+      "precoPf": "290",
+      "custos": 110.0,
+      "liquidoPj": 47,
+      "liquidoPf": 90,
+      "margemPj": 35,
+      "margemPf": 45
     }
   ]
 }

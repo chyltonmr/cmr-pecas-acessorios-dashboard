@@ -29,11 +29,11 @@
             <th style="width: 3rem">
                 <p-tableHeaderCheckbox />
             </th>
-            <th pSortableColumn="marca.nome" style="min-width:16rem">
+            <th pSortableColumn="marca" style="min-width:16rem">
                 Marca
                 <p-sortIcon field="name" />
             </th>
-            <th pSortableColumn="categoria.nome" style="min-width:10rem">
+            <th pSortableColumn="categoria" style="min-width:10rem">
                 Categoria
                 <p-sortIcon field="category" />
             </th>
@@ -43,27 +43,35 @@
                 <p-sortIcon field="name" />
             </th>
             <th>Imagem</th>
-            <th pSortableColumn="preco.precoPj" style="min-width: 8rem">
+            <th pSortableColumn="precoPj" style="min-width: 8rem">
                 Preço PJ
                 <p-sortIcon field="price" />
             </th>
-            <th pSortableColumn="preco.precoPf" style="min-width: 8rem">
+            <th pSortableColumn="precoPf" style="min-width: 8rem">
                 Preço PF
                 <p-sortIcon field="price" />
             </th>
-            <th pSortableColumn="preco.custo.ativo" style="min-width: 8rem">
+            <th pSortableColumn="custos" style="min-width: 8rem">
                 Custo
                 <p-sortIcon field="price" />
             </th>
-            <th pSortableColumn="preco.lucroLiquido" style="min-width: 8rem">
-                Liquido
+            <th pSortableColumn="liquidoPj" style="min-width: 8rem">
+                Liquido PJ
                 <p-sortIcon field="price" />
             </th>
-            <th pSortableColumn="preco.margemLucro.margem" style="min-width: 8rem">
-                Margem
+            <th pSortableColumn="liquidoPf" style="min-width: 8rem">
+                Liquido PF
                 <p-sortIcon field="price" />
             </th>
-            <th pSortableColumn="preco.statusEstoque" style="min-width: 12rem">
+            <th pSortableColumn="margemPj" style="min-width: 8rem">
+                Marge PJ
+                <p-sortIcon field="price" />
+            </th>
+            <th pSortableColumn="margemPf" style="min-width: 8rem">
+                Marge PF
+                <p-sortIcon field="price" />
+            </th>
+            <th pSortableColumn="statusEstoque" style="min-width: 12rem">
                 Status estoque
                 <p-sortIcon field="inventoryStatus" />
             </th>
@@ -79,8 +87,8 @@
             <td style="width: 3rem">
                 <p-tableCheckbox [value]="product" />
             </td>
-            <td style="min-width: 12rem">{{ product.marca.nome }}</td>
-            <td>{{ product.categoria.nome }}</td>
+            <td style="min-width: 12rem">{{ product.marca }}</td>
+            <td>{{ product.categoria }}</td>
             <td style="min-width: 12rem">{{ product.code }}</td>
             <td style="min-width: 16rem">{{ product.nome }}</td>
             <td>
@@ -88,27 +96,25 @@
                     [alt]="product.nome" style="width: 64px" class="rounded" />
             </td>
             <td>
-                <span *ngFor="let p of product.preco">
-                    <span *ngIf="p.ativo">{{ p.precoPj | currency: 'BRL' : 'symbol' }}</span>
-                </span>
+                <span>{{ product.precoPj | currency: 'BRL' : 'symbol' }}</span>
             </td>
             <td>
-                <span *ngFor="let p of product.preco">
-                    <span *ngIf="p.ativo">{{ p.precoPf | currency: 'BRL' : 'symbol' }}</span>
-                </span>
+                <span>{{ product.precoPf | currency: 'BRL' : 'symbol' }}</span>
             </td>
             <td>
-                <span *ngFor="let p of product.custos">
-                    <span *ngIf="p.ativo">{{ p.preco | currency: 'BRL' : 'symbol' }}</span>
-                </span>
+                <span>{{ product.custos | currency: 'BRL' : 'symbol' }}</span>
             </td>
             <td>
-                <span>{{ product.lucroLiquido | currency: 'BRL' : 'symbol' }}</span>
+                <span>{{ product.liquidoPj | currency: 'BRL' : 'symbol' }}</span>
             </td>
             <td>
-                <span *ngFor="let p of product.preco">
-                    <span *ngIf="p.ativo">{{ p.margemLucro.margem }}%</span>
-                </span>
+                <span>{{ product.liquidoPf | currency: 'BRL' : 'symbol' }}</span>
+            </td>
+            <td>
+                <span>{{ product.margemPj }}%</span>
+            </td>
+            <td>
+                <span>{{ product.margemPf }}%</span>
             </td>
             <td>
                 <p-tag [value]="product.statusEstoque" [severity]="getSeverity(product.statusEstoque)" />
@@ -176,7 +182,7 @@
             <div class="grid grid-cols-12 gap-4">
                 <div class="col-span-6">
                     <label for="price" class="block font-bold mb-3">Preço</label>
-                    <p-inputnumber id="price" [(ngModel)]="produto.preco" mode="currency" currency="BRL" locale="pt-BR"
+                    <p-inputnumber id="price" [(ngModel)]="produto.precoPj" mode="currency" currency="BRL" locale="pt-BR"
                         fluid />
                 </div>
                 <div class="col-span-6">
