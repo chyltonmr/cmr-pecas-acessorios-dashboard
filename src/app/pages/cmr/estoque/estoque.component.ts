@@ -20,7 +20,8 @@ import { InputIconModule } from 'primeng/inputicon';
 import { IconFieldModule } from 'primeng/iconfield';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { EstoqueService } from '../../service/estoque.service';
-import {Produto} from '../../../Models/Produto'
+import { Produto } from '../../../Models/ProdutosResponse';
+
 
 interface Column {
     field: string;
@@ -92,10 +93,10 @@ export class EstoqueComponent implements OnInit {
 
     ngOnInit() {
 
-        this.estoque.obterProdutos().subscribe(
+        this.estoque.obterProdutos(1, 14).subscribe(
             (data) => {
-                this.produtos.set(data);
-                console.log('Dados recebidos:', data);
+                this.produtos.set(data.produtos);
+                console.log('Dados recebidos:', data.produtos);
             },
             (error) => {
                 console.error('Erro ao buscar dados:', error);
@@ -108,6 +109,7 @@ export class EstoqueComponent implements OnInit {
     statusEstoque(quantidade: number): string {
         return quantidade > 0 ? 'Em estoque' : 'Sem estoque';
       }
+
 
     loadDemoData() {
 
@@ -133,7 +135,7 @@ export class EstoqueComponent implements OnInit {
     }
 
     openNew() {
-        this.produto = {};
+        this.produto = new Produto();
         this.submitted = false;
         this.productDialog = true;
     }
@@ -173,7 +175,7 @@ export class EstoqueComponent implements OnInit {
             icon: 'pi pi-exclamation-triangle',
             accept: () => {
                 this.produtos.set(this.produtos().filter((val) => val.id !== product.id));
-                this.produto = {};
+                this.produto = new Produto();
                 this.messageService.add({
                     severity: 'success',
                     summary: 'Successful',
@@ -233,7 +235,7 @@ export class EstoqueComponent implements OnInit {
                 });
             } else {
                 this.produto.id = this.createId();
-                this.produto.imagem = 'product-placeholder.svg';
+                this.produto.imagem_thumbnail = 'product-placeholder.svg';
                 this.messageService.add({
                     severity: 'success',
                     summary: 'Successful',
@@ -244,7 +246,7 @@ export class EstoqueComponent implements OnInit {
             }
 
             this.productDialog = false;
-            this.produto = {};
+            this.produto = new Produto();
         }
     }
 

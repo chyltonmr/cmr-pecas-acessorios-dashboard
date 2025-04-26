@@ -135,8 +135,8 @@
 <p-dialog [(visible)]="productDialog" [style]="{ width: '450px' }" header="Product Details" [modal]="true">
     <ng-template #content>
         <div class="flex flex-col gap-6">
-            <img [src]="'https://primefaces.org/cdn/primeng/images/demo/product/' + produto.imagem"
-                [alt]="produto.imagem" class="block m-auto pb-4" *ngIf="produto.imagem" />
+            <img [src]="'https://primefaces.org/cdn/primeng/images/demo/product/' + produto.imagem_thumbnail"
+                [alt]="produto.imagem_thumbnail" class="block m-auto pb-4" *ngIf="produto.imagem_thumbnail" />
             <div>
                 <label for="name" class="block font-bold mb-3">Name</label>
                 <input type="text" pInputText id="name" [(ngModel)]="produto.nome" required autofocus fluid />
@@ -150,7 +150,7 @@
 
             <div>
                 <label for="inventoryStatus" class="block font-bold mb-3">Inventory Status</label>
-                <p-select [(ngModel)]="produto.statusEstoque" inputId="inventoryStatus" [options]="statuses"
+                <p-select [(ngModel)]="produto.estoque" inputId="inventoryStatus" [options]="statuses"
                     optionLabel="label" optionValue="label" placeholder="Select a Status" fluid />
             </div>
 
@@ -182,12 +182,12 @@
             <div class="grid grid-cols-12 gap-4">
                 <div class="col-span-6">
                     <label for="price" class="block font-bold mb-3">Preço</label>
-                    <p-inputnumber id="price" [(ngModel)]="produto.precoPj" mode="currency" currency="BRL" locale="pt-BR"
+                    <p-inputnumber id="price" [(ngModel)]="produto.precos.preco_pj" mode="currency" currency="BRL" locale="pt-BR"
                         fluid />
                 </div>
                 <div class="col-span-6">
                     <label for="quantity" class="block font-bold mb-3">Quantity</label>
-                    <p-inputnumber id="quantity" [(ngModel)]="produto.quantidade" fluid />
+                    <p-inputnumber id="quantity" [(ngModel)]="produto.estoque" fluid />
                 </div>
             </div>
         </div>

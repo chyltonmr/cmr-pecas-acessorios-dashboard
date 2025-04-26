@@ -1,4 +1,4 @@
-export class MargemLucro {
-    id?: string;
-    margem?: number;
-}
+// export class MargemLucro {
+//     id?: string;
+//     margem?: number;
+// }

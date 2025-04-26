@@ -1,5 +1,5 @@
 export const environment = {
   production: false,
-  DOMINIO: 'http://localhost:3000',
+  DOMINIO: 'https://localhost:7282',
   ENDPOINT_ESTOQUE: 'produtos',
 };
