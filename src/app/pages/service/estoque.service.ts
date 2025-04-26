@@ -19,7 +19,7 @@ export class EstoqueService {
       pageSize: pageSize.toString()
     };
     
-    return this.http.get<ProdutosResponse>(`${environment.DOMINIO}/${environment.ENDPOINT_ESTOQUE}`,
+    return this.http.get<ProdutosResponse>(`${environment.DOMINIO_API_CMR}/${environment.ENDPOINT_ESTOQUE}`,
       { params }
     );
   }

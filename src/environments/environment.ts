@@ -1,5 +1,6 @@
 export const environment = {
   production: false,
-  DOMINIO: '',
+  DOMINIO_API_CMR: '',
+  DOMINIO_JSON_SERVER: '',
   ENDPOINT_ESTOQUE: '',
 };
