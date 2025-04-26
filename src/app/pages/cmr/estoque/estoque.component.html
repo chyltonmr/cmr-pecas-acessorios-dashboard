@@ -11,7 +11,7 @@
 </p-toolbar>
 
 <p-table #dt [value]="produtos()" [rows]="10" [columns]="cols" [paginator]="true"
-    [globalFilterFields]="['name', 'country.name', 'representative.name', 'status']"
+    [globalFilterFields]="['nome', 'descricao', 'categoria.nome', 'marca.nome', 'precos.preco_pj', 'precos.preco_pf']"
     [tableStyle]="{ 'min-width': '75rem' }" [(selection)]="selectedProducts" [rowHover]="true" dataKey="id"
     currentPageReportTemplate="Showing {first} to {last} of {totalRecords} produtos" [showCurrentPageReport]="true"
     [rowsPerPageOptions]="[10, 20, 30]">
@@ -75,8 +75,8 @@
                 Status estoque
                 <p-sortIcon field="inventoryStatus" />
             </th>
-            <th pSortableColumn="avaliacao" style="min-width: 12rem">
-                Avaliações
+            <th pSortableColumn="Estoque" style="min-width: 12rem">
+                Estoque
                 <p-sortIcon field="rating" />
             </th>
             <th style="min-width: 12rem"></th>
@@ -120,7 +120,7 @@
                 <p-tag [value]="statusEstoque(product.estoque)" [severity]="getSeverity(statusEstoque(product.estoque))" />
             </td>
             <td>
-                <p-rating [(ngModel)]="product.avaliacao" [readonly]="true" />
+                <span>{{ product.estoque}}</span>
             </td>
             <td>
                 <p-button icon="pi pi-pencil" class="mr-2" [rounded]="true" [outlined]="true"
