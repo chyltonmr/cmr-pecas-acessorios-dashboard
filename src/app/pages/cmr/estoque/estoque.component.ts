@@ -105,6 +105,10 @@ export class EstoqueComponent implements OnInit {
         this.loadDemoData();
     }
 
+    statusEstoque(quantidade: number): string {
+        return quantidade > 0 ? 'Em estoque' : 'Sem estoque';
+      }
+
     loadDemoData() {
 
         this.statuses = [

@@ -29,13 +29,13 @@
             <th style="width: 3rem">
                 <p-tableHeaderCheckbox />
             </th>
-            <th pSortableColumn="marca" style="min-width:16rem">
+            <th pSortableColumn="nome" style="min-width:16rem">
                 Marca
-                <p-sortIcon field="name" />
+                <p-sortIcon field="nome" />
             </th>
-            <th pSortableColumn="categoria" style="min-width:10rem">
+            <th pSortableColumn="nome" style="min-width:10rem">
                 Categoria
-                <p-sortIcon field="category" />
+                <p-sortIcon field="nome" />
             </th>
             <th style="min-width: 16rem">Código</th>
             <th pSortableColumn="nome" style="min-width:16rem">
@@ -43,33 +43,33 @@
                 <p-sortIcon field="name" />
             </th>
             <th>Imagem</th>
-            <th pSortableColumn="precoPj" style="min-width: 8rem">
+            <th pSortableColumn="preco_pj" style="min-width: 8rem">
                 Preço PJ
-                <p-sortIcon field="price" />
+                <p-sortIcon field="preco_pj" />
             </th>
-            <th pSortableColumn="precoPf" style="min-width: 8rem">
+            <th pSortableColumn="preco_pf" style="min-width: 8rem">
                 Preço PF
-                <p-sortIcon field="price" />
+                <p-sortIcon field="preco_pf" />
             </th>
-            <th pSortableColumn="custos" style="min-width: 8rem">
+            <th pSortableColumn="custo" style="min-width: 8rem">
                 Custo
-                <p-sortIcon field="price" />
+                <p-sortIcon field="custo" />
             </th>
-            <th pSortableColumn="liquidoPj" style="min-width: 8rem">
+            <th pSortableColumn="valor_liquido_pj" style="min-width: 8rem">
                 Liquido PJ
-                <p-sortIcon field="price" />
+                <p-sortIcon field="valor_liquido_pj" />
             </th>
-            <th pSortableColumn="liquidoPf" style="min-width: 8rem">
+            <th pSortableColumn="valor_liquido_pf" style="min-width: 8rem">
                 Liquido PF
-                <p-sortIcon field="price" />
+                <p-sortIcon field="valor_liquido_pf" />
             </th>
-            <th pSortableColumn="margemPj" style="min-width: 8rem">
+            <th pSortableColumn="porcentagem_pj" style="min-width: 8rem">
                 Marge PJ
-                <p-sortIcon field="price" />
+                <p-sortIcon field="porcentagem_pj" />
             </th>
-            <th pSortableColumn="margemPf" style="min-width: 8rem">
+            <th pSortableColumn="porcentagem_pf" style="min-width: 8rem">
                 Marge PF
-                <p-sortIcon field="price" />
+                <p-sortIcon field="porcentagem_pf" />
             </th>
             <th pSortableColumn="statusEstoque" style="min-width: 12rem">
                 Status estoque
@@ -87,37 +87,37 @@
             <td style="width: 3rem">
                 <p-tableCheckbox [value]="product" />
             </td>
-            <td style="min-width: 12rem">{{ product.marca }}</td>
-            <td>{{ product.categoria }}</td>
-            <td style="min-width: 12rem">{{ product.code }}</td>
+            <td style="min-width: 12rem">{{ product.marca.nome }}</td>
+            <td>{{ product.categoria.nome }}</td>
+            <td style="min-width: 12rem">{{ product.id }}</td>
             <td style="min-width: 16rem">{{ product.nome }}</td>
             <td>
-                <img [src]="'https://primefaces.org/cdn/primeng/images/demo/product/' + product.imagem"
+                <img [src]="'https://primefaces.org/cdn/primeng/images/demo/product/' + product.imagem_thumbnail"
                     [alt]="product.nome" style="width: 64px" class="rounded" />
             </td>
             <td>
-                <span>{{ product.precoPj | currency: 'BRL' : 'symbol' }}</span>
+                <span>{{ product.precos.preco_pj | currency: 'BRL' : 'symbol' }}</span>
             </td>
             <td>
-                <span>{{ product.precoPf | currency: 'BRL' : 'symbol' }}</span>
+                <span>{{ product.precos.preco_pf | currency: 'BRL' : 'symbol' }}</span>
             </td>
             <td>
-                <span>{{ product.custos | currency: 'BRL' : 'symbol' }}</span>
+                <span>{{ product.custo.custo | currency: 'BRL' : 'symbol' }}</span>
             </td>
             <td>
-                <span>{{ product.liquidoPj | currency: 'BRL' : 'symbol' }}</span>
+                <span>{{ product.precos.margemLucro.valor_liquido_pj | currency: 'BRL' : 'symbol' }}</span>
             </td>
             <td>
-                <span>{{ product.liquidoPf | currency: 'BRL' : 'symbol' }}</span>
+                <span>{{ product.precos.margemLucro.valor_liquido_pf | currency: 'BRL' : 'symbol' }}</span>
             </td>
             <td>
-                <span>{{ product.margemPj }}%</span>
+                <span>{{ product.precos.margemLucro.porcentagem_pj }}%</span>
             </td>
             <td>
-                <span>{{ product.margemPf }}%</span>
+                <span>{{ product.precos.margemLucro.porcentagem_pf}}%</span>
             </td>
             <td>
-                <p-tag [value]="product.statusEstoque" [severity]="getSeverity(product.statusEstoque)" />
+                <p-tag [value]="statusEstoque(product.estoque)" [severity]="getSeverity(statusEstoque(product.estoque))" />
             </td>
             <td>
                 <p-rating [(ngModel)]="product.avaliacao" [readonly]="true" />

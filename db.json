@@ -1,42 +1,421 @@
 {
   "produtos": [
     {
-      "id": "01",
-      "code": "zzDFDFFDF1",
-      "nome": "A Led Rayx Small H1",
-      "descricao": "DFFD Description",
-      "imagem": "blue-t-shirt.jpg",
-      "quantidade": 2,
-      "statusEstoque": "Em estoque",
-      "avaliacao": 4,
-      "categoria": "A Lampada de led",
-      "marca": "Rayx",
-      "precoPj": "85",
-      "precoPf": "150",
-      "custos": 60.0,
-      "liquidoPj": 42,
-      "liquidoPf": 80,
-      "margemPj": 37,
-      "margemPf": 47
+      "id": "747a1e31-882e-4853-a03a-7e134acb49f9",
+      "nome": "Lâmpada halógena h1",
+      "imagem_thumbnail": "blue-t-shirt.jpg",
+      "descricao": "Produto Lâmpada halógena h1 da marca TIGER AUTO",
+      "estoque": 9,
+      "id_categoria": "0aff2359-8847-4f4e-81b6-c92acccebf33",
+      "id_marca": "3dc3536d-f785-4050-99e8-2b54f995709f",
+      "data_insercao": "2025-01-20T00:00:00",
+      "data_desativacao": null,
+      "categoria": {
+        "id": "0aff2359-8847-4f4e-81b6-c92acccebf33",
+        "nome": "Lâmpadas halogena",
+        "data_insercao": "2025-01-15T00:00:00",
+        "data_desativacao": null
+      },
+      "marca": {
+        "id": "3dc3536d-f785-4050-99e8-2b54f995709f",
+        "nome": "YZZZ AUTO",
+        "data_insercao": "2025-03-17T00:00:00",
+        "data_desativacao": null
+      },
+      "precos": {
+        "id": "1098206f-00ed-4096-b45f-1ffbbbeada29",
+        "id_produto": "747a1e31-882e-4853-a03a-7e134acb49f9",
+        "id_tipo_preco": "a194760c-16f8-4e17-993f-a0f439cfabc4",
+        "preco_pj": 125.7,
+        "preco_pf": 199.04,
+        "data_insercao": "2025-02-14T00:00:00",
+        "data_desativacao": null,
+        "observacao": "Preço Atacado do produto Lâmpada halógena h1",
+        "tipoPreco": {
+          "id": "a194760c-16f8-4e17-993f-a0f439cfabc4",
+          "nome": "Atacado",
+          "descricao": "Tipo de preço: Atacado",
+          "data_insercao": "2024-11-27T00:00:00",
+          "data_desativacao": "0001-01-01T00:00:00"
+        },
+        "margemLucro": {
+          "id": "c1cc1137-a194-4bca-a93d-46a9df3e2162",
+          "porcentagem_pj": 42.14,
+          "porcentagem_pf": 80.64,
+          "valor_liquido_pj": 21.64,
+          "valor_liquido_pf": 65.64,
+          "id_preco": "1098206f-00ed-4096-b45f-1ffbbbeada29",
+          "data_insercao": "2025-02-14T00:00:00",
+          "data_desativacao": "0001-01-01T00:00:00"
+        }
+      },
+      "custo": {
+        "id": "f6fb6144-7838-43ca-9b87-f1b75a3e7f31",
+        "id_produto": "747a1e31-882e-4853-a03a-7e134acb49f9",
+        "nome": "Fornecedor TIGER AUTO",
+        "descricao": "Lote de compra para Lâmpada halógena h1",
+        "custo": 13.5,
+        "data_insercao": "2024-12-20T00:00:00",
+        "data_desativacao": "0001-01-01T00:00:00"
+      }
     },
     {
-      "id": "02",
-      "code": "dddDFDFFDF1",
-      "nome": "B Led Diamond h7",
-      "descricao": "camop descricao led diamond h7",
-      "imagem": "blue-t-shirt.jpg",
-      "quantidade": 2,
-      "statusEstoque": "Sem estoque",
-      "avaliacao": 5,
-      "categoria": "B Lampada de led",
-      "marca": "Rayx",
-      "precoPj": "170",
-      "precoPf": "290",
-      "custos": 110.0,
-      "liquidoPj": 47,
-      "liquidoPf": 90,
-      "margemPj": 35,
-      "margemPf": 45
+      "id": "ab120d1b-31c9-456b-893a-2fcb66f3f538",
+      "nome": "Lâmpada halógena h3",
+      "imagem_thumbnail": "blue-t-shirt.jpg",
+      "descricao": "Produto Lâmpada halógena h3 da marca TIGER AUTO",
+      "estoque": 26,
+      "id_categoria": "0aff2359-8847-4f4e-81b6-c92acccebf33",
+      "id_marca": "3dc3536d-f785-4050-99e8-2b54f995709f",
+      "data_insercao": "2024-12-12T00:00:00",
+      "data_desativacao": null,
+      "categoria": {
+        "id": "0aff2359-8847-4f4e-81b6-c92acccebf33",
+        "nome": "Lâmpadas halogena",
+        "data_insercao": "2025-01-15T00:00:00",
+        "data_desativacao": null
+      },
+      "marca": {
+        "id": "3dc3536d-f785-4050-99e8-2b54f995709f",
+        "nome": "TIGER AUTO",
+        "data_insercao": "2025-03-17T00:00:00",
+        "data_desativacao": null
+      },
+      "precos": {
+        "id": "6c94f290-d181-41d9-93ca-f99e647847d1",
+        "id_produto": "ab120d1b-31c9-456b-893a-2fcb66f3f538",
+        "id_tipo_preco": "a194760c-16f8-4e17-993f-a0f439cfabc4",
+        "preco_pj": 32.79,
+        "preco_pf": 70.04,
+        "data_insercao": "2024-12-01T00:00:00",
+        "data_desativacao": null,
+        "observacao": "Preço Atacado do produto Lâmpada halógena h3",
+        "tipoPreco": {
+          "id": "a194760c-16f8-4e17-993f-a0f439cfabc4",
+          "nome": "Atacado",
+          "descricao": "Tipo de preço: Atacado",
+          "data_insercao": "2024-11-27T00:00:00",
+          "data_desativacao": "0001-01-01T00:00:00"
+        },
+        "margemLucro": {
+          "id": "b62b59d4-8eb1-4d46-9546-6a57079794a2",
+          "porcentagem_pj": 42.38,
+          "porcentagem_pf": 84.64,
+          "valor_liquido_pj": 21.64,
+          "valor_liquido_pf": 55.64,
+          "id_preco": "6c94f290-d181-41d9-93ca-f99e647847d1",
+          "data_insercao": "2024-12-01T00:00:00",
+          "data_desativacao": "0001-01-01T00:00:00"
+        }
+      },
+      "custo": {
+        "id": "5ee0e8ad-7014-495c-bc25-f1517bf8fddf",
+        "id_produto": "ab120d1b-31c9-456b-893a-2fcb66f3f538",
+        "nome": "Fornecedor TIGER AUTO",
+        "descricao": "Lote de compra para Lâmpada halógena h3",
+        "custo": 44.15,
+        "data_insercao": "2025-03-28T00:00:00",
+        "data_desativacao": "0001-01-01T00:00:00"
+      }
+    },
+    {
+      "id": "6a7326b5-4305-4568-a594-70ff451a05df",
+      "nome": "Lâmpada halógena h4",
+      "imagem_thumbnail": "blue-t-shirt.jpg",
+      "descricao": "Produto Lâmpada halógena h4 da marca TIGER AUTO",
+      "estoque": 26,
+      "id_categoria": "0aff2359-8847-4f4e-81b6-c92acccebf33",
+      "id_marca": "3dc3536d-f785-4050-99e8-2b54f995709f",
+      "data_insercao": "2024-11-28T00:00:00",
+      "data_desativacao": null,
+      "categoria": {
+        "id": "0aff2359-8847-4f4e-81b6-c92acccebf33",
+        "nome": "Lâmpadas halogena",
+        "data_insercao": "2025-01-15T00:00:00",
+        "data_desativacao": null
+      },
+      "marca": {
+        "id": "3dc3536d-f785-4050-99e8-2b54f995709f",
+        "nome": "TIGER AUTO",
+        "data_insercao": "2025-03-17T00:00:00",
+        "data_desativacao": null
+      },
+      "precos": {
+        "id": "a2342078-543f-442c-9435-b6eb5971dc40",
+        "id_produto": "6a7326b5-4305-4568-a594-70ff451a05df",
+        "id_tipo_preco": "51e36c08-aa00-402b-8f9d-3c19f9ab9538",
+        "preco_pj": 53.86,
+        "preco_pf": 100.04,
+        "data_insercao": "2025-02-23T00:00:00",
+        "data_desativacao": null,
+        "observacao": "Preço Varejo do produto Lâmpada halógena h4",
+        "tipoPreco": {
+          "id": "51e36c08-aa00-402b-8f9d-3c19f9ab9538",
+          "nome": "Varejo",
+          "descricao": "Tipo de preço: Varejo",
+          "data_insercao": "2024-12-11T00:00:00",
+          "data_desativacao": "0001-01-01T00:00:00"
+        },
+        "margemLucro": {
+          "id": "9fd8da9c-ccf9-41db-b6f5-59b3d249386e",
+          "porcentagem_pj": 27.14,
+          "porcentagem_pf": 54.64,
+          "valor_liquido_pj": 15.64,
+          "valor_liquido_pf": 25.64,
+          "id_preco": "a2342078-543f-442c-9435-b6eb5971dc40",
+          "data_insercao": "2025-02-23T00:00:00",
+          "data_desativacao": "0001-01-01T00:00:00"
+        }
+      },
+      "custo": {
+        "id": "1fb17780-d1a1-46e6-a298-5047cc9c31a8",
+        "id_produto": "6a7326b5-4305-4568-a594-70ff451a05df",
+        "nome": "Fornecedor TIGER AUTO",
+        "descricao": "Lote de compra para Lâmpada halógena h4",
+        "custo": 28.08,
+        "data_insercao": "2025-02-25T00:00:00",
+        "data_desativacao": "0001-01-01T00:00:00"
+      }
+    },
+    {
+      "id": "923abc04-bcfe-4d1a-920b-a4a83d431d4a",
+      "nome": "Led Diamond H1",
+      "imagem_thumbnail": "blue-t-shirt.jpg",
+      "descricao": "Produto Led Diamond H1 da marca TIGER AUTO",
+      "estoque": 44,
+      "id_categoria": "9d8dd0e3-af82-4af6-930d-fcd1dd51378e",
+      "id_marca": "3dc3536d-f785-4050-99e8-2b54f995709f",
+      "data_insercao": "2025-01-09T00:00:00",
+      "data_desativacao": null,
+      "categoria": {
+        "id": "9d8dd0e3-af82-4af6-930d-fcd1dd51378e",
+        "nome": "Lâmpadas de Led",
+        "data_insercao": "2024-12-01T00:00:00",
+        "data_desativacao": null
+      },
+      "marca": {
+        "id": "3dc3536d-f785-4050-99e8-2b54f995709f",
+        "nome": "TIGER AUTO",
+        "data_insercao": "2025-03-17T00:00:00",
+        "data_desativacao": null
+      },
+      "precos": {
+        "id": "3abcebde-c03b-4f5a-a753-f1fab02f745a",
+        "id_produto": "923abc04-bcfe-4d1a-920b-a4a83d431d4a",
+        "id_tipo_preco": "a194760c-16f8-4e17-993f-a0f439cfabc4",
+        "preco_pj": 146.15,
+        "preco_pf": 300.04,
+        "data_insercao": "2025-01-20T00:00:00",
+        "data_desativacao": null,
+        "observacao": "Preço Atacado do produto Led Diamond H1",
+        "tipoPreco": {
+          "id": "a194760c-16f8-4e17-993f-a0f439cfabc4",
+          "nome": "Atacado",
+          "descricao": "Tipo de preço: Atacado",
+          "data_insercao": "2024-11-27T00:00:00",
+          "data_desativacao": "0001-01-01T00:00:00"
+        },
+        "margemLucro": {
+          "id": "f23ccdf4-0e38-4bae-afc5-31bec7952596",
+          "porcentagem_pj": 34.85,
+          "porcentagem_pf": 80.64,
+          "valor_liquido_pj": 15.64,
+          "valor_liquido_pf": 25.64,
+          "id_preco": "3abcebde-c03b-4f5a-a753-f1fab02f745a",
+          "data_insercao": "2025-01-20T00:00:00",
+          "data_desativacao": "0001-01-01T00:00:00"
+        }
+      },
+      "custo": {
+        "id": "5ae15002-535a-4c41-9afa-c43faae44aef",
+        "id_produto": "923abc04-bcfe-4d1a-920b-a4a83d431d4a",
+        "nome": "Fornecedor TIGER AUTO",
+        "descricao": "Lote de compra para Led Diamond H1",
+        "custo": 40.34,
+        "data_insercao": "2025-02-22T00:00:00",
+        "data_desativacao": "0001-01-01T00:00:00"
+      }
+    },
+    {
+      "id": "55406d46-6079-4211-a1f0-f316abc3eb4d",
+      "nome": "Led Diamond H3",
+      "imagem_thumbnail": "blue-t-shirt.jpg",
+      "descricao": "Produto Led Diamond H3 da marca TIGER AUTO",
+      "estoque": 13,
+      "id_categoria": "9d8dd0e3-af82-4af6-930d-fcd1dd51378e",
+      "id_marca": "3dc3536d-f785-4050-99e8-2b54f995709f",
+      "data_insercao": "2025-01-10T00:00:00",
+      "data_desativacao": null,
+      "categoria": {
+        "id": "9d8dd0e3-af82-4af6-930d-fcd1dd51378e",
+        "nome": "Lâmpadas de Led",
+        "data_insercao": "2024-12-01T00:00:00",
+        "data_desativacao": null
+      },
+      "marca": {
+        "id": "3dc3536d-f785-4050-99e8-2b54f995709f",
+        "nome": "TIGER AUTO",
+        "data_insercao": "2025-03-17T00:00:00",
+        "data_desativacao": null
+      },
+      "precos": {
+        "id": "7cd709aa-4f26-4b12-98c0-b72fd61230c6",
+        "id_produto": "55406d46-6079-4211-a1f0-f316abc3eb4d",
+        "id_tipo_preco": "a194760c-16f8-4e17-993f-a0f439cfabc4",
+        "preco_pj": 89.5,
+        "preco_pf": 160.04,
+        "data_insercao": "2025-01-10T00:00:00",
+        "data_desativacao": null,
+        "observacao": "Preço Atacado do produto Led Diamond H3",
+        "tipoPreco": {
+          "id": "a194760c-16f8-4e17-993f-a0f439cfabc4",
+          "nome": "Atacado",
+          "descricao": "Tipo de preço: Atacado",
+          "data_insercao": "2024-11-27T00:00:00",
+          "data_desativacao": "0001-01-01T00:00:00"
+        },
+        "margemLucro": {
+          "id": "bba9ae21-9a9e-4cc2-b950-ba0ef160d1a1",
+          "porcentagem_pj": 39.11,
+          "porcentagem_pf": 77.64,
+          "valor_liquido_pj": 15.64,
+          "valor_liquido_pf": 45.64,
+          "id_preco": "7cd709aa-4f26-4b12-98c0-b72fd61230c6",
+          "data_insercao": "2025-01-10T00:00:00",
+          "data_desativacao": "0001-01-01T00:00:00"
+        }
+      },
+      "custo": {
+        "id": "a729be09-37e2-4305-8ad1-971d477e4cb9",
+        "id_produto": "55406d46-6079-4211-a1f0-f316abc3eb4d",
+        "nome": "Fornecedor TIGER AUTO",
+        "descricao": "Lote de compra para Led Diamond H3",
+        "custo": 55.78,
+        "data_insercao": "2024-12-05T00:00:00",
+        "data_desativacao": "0001-01-01T00:00:00"
+      }
+    },
+    {
+      "id": "008dd56b-c65c-4800-b4a9-7e59e64945e2",
+      "nome": "Led Diamond H4",
+      "imagem_thumbnail": "blue-t-shirt.jpg",
+      "descricao": "Produto Led Diamond H4 da marca TIGER AUTO",
+      "estoque": 9,
+      "id_categoria": "9d8dd0e3-af82-4af6-930d-fcd1dd51378e",
+      "id_marca": "3dc3536d-f785-4050-99e8-2b54f995709f",
+      "data_insercao": "2025-03-11T00:00:00",
+      "data_desativacao": null,
+      "categoria": {
+        "id": "9d8dd0e3-af82-4af6-930d-fcd1dd51378e",
+        "nome": "Lâmpadas de Led",
+        "data_insercao": "2024-12-01T00:00:00",
+        "data_desativacao": null
+      },
+      "marca": {
+        "id": "3dc3536d-f785-4050-99e8-2b54f995709f",
+        "nome": "TIGER AUTO",
+        "data_insercao": "2025-03-17T00:00:00",
+        "data_desativacao": null
+      },
+      "precos": {
+        "id": "b5cef998-4a8a-40fd-a9c8-ea9fe6a17c8a",
+        "id_produto": "008dd56b-c65c-4800-b4a9-7e59e64945e2",
+        "id_tipo_preco": "a194760c-16f8-4e17-993f-a0f439cfabc4",
+        "preco_pj": 75.8,
+        "preco_pf": 150.04,
+        "data_insercao": "2025-02-18T00:00:00",
+        "data_desativacao": null,
+        "observacao": "Preço Atacado do produto Led Diamond H4",
+        "tipoPreco": {
+          "id": "a194760c-16f8-4e17-993f-a0f439cfabc4",
+          "nome": "Atacado",
+          "descricao": "Tipo de preço: Atacado",
+          "data_insercao": "2024-11-27T00:00:00",
+          "data_desativacao": "0001-01-01T00:00:00"
+        },
+        "margemLucro": {
+          "id": "3fb21b3b-a345-4ce8-82b7-7efa4d3c5e24",
+          "porcentagem_pj": 35.66,
+          "porcentagem_pf": 70.64,
+          "valor_liquido_pj": 15.64,
+          "valor_liquido_pf": 35.64,
+          "id_preco": "b5cef998-4a8a-40fd-a9c8-ea9fe6a17c8a",
+          "data_insercao": "2025-02-18T00:00:00",
+          "data_desativacao": "0001-01-01T00:00:00"
+        }
+      },
+      "custo": {
+        "id": "f750885c-29a6-4384-9c1b-bf2197204c8f",
+        "id_produto": "008dd56b-c65c-4800-b4a9-7e59e64945e2",
+        "nome": "Fornecedor TIGER AUTO",
+        "descricao": "Lote de compra para Led Diamond H4",
+        "custo": 55.4,
+        "data_insercao": "2025-01-24T00:00:00",
+        "data_desativacao": "0001-01-01T00:00:00"
+      }
+    },
+    {
+      "id": "9b1f04e6-bb01-4046-9fa7-0586e338ecdc",
+      "nome": "Led Diamond H7",
+      "imagem_thumbnail": "blue-t-shirt.jpg",
+      "descricao": "Produto Led Diamond H7 da marca TIGER AUTO",
+      "estoque": 39,
+      "id_categoria": "9d8dd0e3-af82-4af6-930d-fcd1dd51378e",
+      "id_marca": "3dc3536d-f785-4050-99e8-2b54f995709f",
+      "data_insercao": "2024-12-10T00:00:00",
+      "data_desativacao": null,
+      "categoria": {
+        "id": "9d8dd0e3-af82-4af6-930d-fcd1dd51378e",
+        "nome": "Lâmpadas de Led",
+        "data_insercao": "2024-12-01T00:00:00",
+        "data_desativacao": null
+      },
+      "marca": {
+        "id": "3dc3536d-f785-4050-99e8-2b54f995709f",
+        "nome": "TIGER AUTO",
+        "data_insercao": "2025-03-17T00:00:00",
+        "data_desativacao": null
+      },
+      "precos": {
+        "id": "0c783013-4437-4336-8b96-8e6d80eb124e",
+        "id_produto": "9b1f04e6-bb01-4046-9fa7-0586e338ecdc",
+        "id_tipo_preco": "a194760c-16f8-4e17-993f-a0f439cfabc4",
+        "preco_pj": 139.58,
+        "preco_pf": 230.04,
+        "data_insercao": "2024-12-18T00:00:00",
+        "data_desativacao": null,
+        "observacao": "Preço Atacado do produto Led Diamond H7",
+        "tipoPreco": {
+          "id": "a194760c-16f8-4e17-993f-a0f439cfabc4",
+          "nome": "Atacado",
+          "descricao": "Tipo de preço: Atacado",
+          "data_insercao": "2024-11-27T00:00:00",
+          "data_desativacao": "0001-01-01T00:00:00"
+        },
+        "margemLucro": {
+          "id": "26e6148a-a8ce-4662-af94-a9a99870f622",
+          "porcentagem_pj": 21.61,
+          "porcentagem_pf": 55.64,
+          "valor_liquido_pj": 10.64,
+          "valor_liquido_pf": 25.64,
+          "id_preco": "0c783013-4437-4336-8b96-8e6d80eb124e",
+          "data_insercao": "2024-12-18T00:00:00",
+          "data_desativacao": "0001-01-01T00:00:00"
+        }
+      },
+      "custo": {
+        "id": "3d0fc35d-70e0-40d4-8149-ad85e435108e",
+        "id_produto": "9b1f04e6-bb01-4046-9fa7-0586e338ecdc",
+        "nome": "Fornecedor TIGER AUTO",
+        "descricao": "Lote de compra para Led Diamond H7",
+        "custo": 29.01,
+        "data_insercao": "2024-12-11T00:00:00",
+        "data_desativacao": "0001-01-01T00:00:00"
+      }
     }
-  ]
+  ],
+  "totalItems": 13,
+  "pageNumber": 1,
+  "pageSize": 14,
+  "totalPages": 1
 }
