@@ -141,6 +141,7 @@ export class EstoqueComponent implements OnInit {
     }
 
     editProduct(product: Produto) {
+        console.log(product);
         this.produto = { ...product };
         this.productDialog = true;
     }
