@@ -248,6 +248,7 @@ export class EstoqueComponent implements OnInit {
         this.produto.categoria = this.categorias[idx];
         this.produto.id_categoria = this.produto.categoria.id;
 
+        //TODO: DESCOMENTAR AQUI QUANDO JÁ TER FEITO ENDPOINT PARA RECUPERAR MARCAS. DESA FORMAM ESSA PROPRIEDADE 'marcas' ESTARÁ POPULADA
         //Atualizar objeto Marca
         // let marc: Marca | undefined;
         // const idxM = this.marcas.findIndex(c => c.id === this.produto.marca.id);
