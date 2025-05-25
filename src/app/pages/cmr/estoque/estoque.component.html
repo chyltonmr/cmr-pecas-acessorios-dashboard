@@ -117,7 +117,8 @@
                 <span>{{ product.precos.margemLucro.porcentagem_pf}}%</span>
             </td>
             <td>
-                <p-tag [value]="statusEstoque(product.estoque)" [severity]="getSeverity(statusEstoque(product.estoque))" />
+                <p-tag [value]="statusEstoque(product.estoque)"
+                    [severity]="getSeverity(statusEstoque(product.estoque))" />
             </td>
             <td>
                 <span>{{ product.estoque}}</span>
@@ -132,13 +133,24 @@
     </ng-template>
 </p-table>
 
-<p-dialog [(visible)]="productDialog" [style]="{ width: '450px' }" header="Product Details" [modal]="true">
+<p-dialog [(visible)]="productDialog" [style]="{ width: '450px' }" header="Detalhes Produto" [modal]="true">
     <ng-template #content>
         <div class="flex flex-col gap-6">
             <img [src]="'https://primefaces.org/cdn/primeng/images/demo/product/' + produto.imagem_thumbnail"
                 [alt]="produto.imagem_thumbnail" class="block m-auto pb-4" *ngIf="produto.imagem_thumbnail" />
             <div>
-                <label for="name" class="block font-bold mb-3">Name</label>
+                <label for="name" class="block font-bold mb-3">Marca</label>
+                <input type="text" pInputText id="name" [(ngModel)]="produto.marca.nome" required autofocus fluid />
+                <small class="text-red-500" *ngIf="submitted && !produto.marca.nome">Name is required.</small>
+            </div>
+            <div>
+                <!-- {{produto.categoria | json }} -->
+                <label for="inventoryStatus" class="block font-bold mb-3">Categoria</label>
+                <p-select [(ngModel)]="produto.categoria.id" inputId="inventoryStatus" [options]="categorias"
+                    optionLabel="nome" optionValue="id" placeholder="Select a Status" fluid />
+            </div>
+            <div>
+                <label for="name" class="block font-bold mb-3">Nome produto</label>
                 <input type="text" pInputText id="name" [(ngModel)]="produto.nome" required autofocus fluid />
                 <small class="text-red-500" *ngIf="submitted && !produto.nome">Name is required.</small>
             </div>
@@ -148,45 +160,24 @@
                     fluid></textarea>
             </div>
 
-            <div>
-                <label for="inventoryStatus" class="block font-bold mb-3">Inventory Status</label>
-                <p-select [(ngModel)]="produto.estoque" inputId="inventoryStatus" [options]="statuses"
-                    optionLabel="label" optionValue="label" placeholder="Select a Status" fluid />
-            </div>
-
-            <div>
-                <span class="block font-bold mb-4">Category</span>
-                <div class="grid grid-cols-12 gap-4">
-                    <div class="flex items-center gap-2 col-span-6">
-                        <p-radiobutton id="category1" name="category" value="Accessories"
-                            [(ngModel)]="produto.categoria" />
-                        <label for="category1">Accessories</label>
-                    </div>
-                    <div class="flex items-center gap-2 col-span-6">
-                        <p-radiobutton id="category2" name="category" value="Clothing"
-                            [(ngModel)]="produto.categoria" />
-                        <label for="category2">Clothing</label>
-                    </div>
-                    <div class="flex items-center gap-2 col-span-6">
-                        <p-radiobutton id="category3" name="category" value="Electronics"
-                            [(ngModel)]="produto.categoria" />
-                        <label for="category3">Electronics</label>
-                    </div>
-                    <div class="flex items-center gap-2 col-span-6">
-                        <p-radiobutton id="category4" name="category" value="Fitness" [(ngModel)]="produto.categoria" />
-                        <label for="category4">Fitness</label>
-                    </div>
-                </div>
-            </div>
-
             <div class="grid grid-cols-12 gap-4">
                 <div class="col-span-6">
-                    <label for="price" class="block font-bold mb-3">Preço</label>
-                    <p-inputnumber id="price" [(ngModel)]="produto.precos.preco_pj" mode="currency" currency="BRL" locale="pt-BR"
-                        fluid />
+                    <label for="price" class="block font-bold mb-3">Preço PJ</label>
+                    <p-inputnumber id="price" [(ngModel)]="produto.precos.preco_pj" mode="currency" currency="BRL"
+                        locale="pt-BR" fluid />
                 </div>
                 <div class="col-span-6">
-                    <label for="quantity" class="block font-bold mb-3">Quantity</label>
+                    <label for="price" class="block font-bold mb-3">Preço PF</label>
+                    <p-inputnumber id="price" [(ngModel)]="produto.precos.preco_pf" mode="currency" currency="BRL"
+                        locale="pt-BR" fluid />
+                </div>
+                <div class="col-span-6">
+                    <label for="price" class="block font-bold mb-3">Custo</label>
+                    <p-inputnumber id="price" [(ngModel)]="produto.custo.custo" mode="currency" currency="BRL"
+                        locale="pt-BR" fluid />
+                </div>
+                <div class="col-span-6">
+                    <label for="quantity" class="block font-bold mb-3">Estoque</label>
                     <p-inputnumber id="quantity" [(ngModel)]="produto.estoque" fluid />
                 </div>
             </div>

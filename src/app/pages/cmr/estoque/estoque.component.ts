@@ -20,7 +20,9 @@ import { InputIconModule } from 'primeng/inputicon';
 import { IconFieldModule } from 'primeng/iconfield';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { EstoqueService } from '../../service/estoque.service';
-import { Produto } from '../../../Models/ProdutosResponse';
+import { Categoria, Marca, Produto } from '../../../Models/ProdutosResponse';
+import { CategoriaService } from '../../service/categoria.service';
+import { v4 as uuidv4 } from 'uuid';
 
 
 interface Column {
@@ -81,10 +83,14 @@ export class EstoqueComponent implements OnInit {
 
     cols!: Column[];
 
+    categorias: Categoria[] = [];
+    marcas: Marca[] = [];
+
     constructor(
         private messageService: MessageService,
         private confirmationService: ConfirmationService,
-        private estoque: EstoqueService
+        private estoque: EstoqueService,
+        private categoriaService: CategoriaService
     ) { }
 
     exportCSV() {
@@ -93,31 +99,48 @@ export class EstoqueComponent implements OnInit {
 
     ngOnInit() {
 
-        this.estoque.obterProdutos(1, 14).subscribe(
+        this.loadDemoData();
+
+        this.ObterProdutos(1, 14);
+
+        this.ObterCategorias();
+    }
+
+    statusEstoque(quantidade: number): string {
+        return quantidade > 0 ? 'Em estoque' : 'Sem estoque';
+    }
+
+    ObterProdutos(pageNumber: number, pageSize: number) {
+        this.estoque.obterProdutos(pageNumber, pageSize).subscribe(
             (data) => {
-                this.produtos.set(data.produtos);
-                console.log('Dados recebidos:', data.produtos);
+                this.produtos.set(data.listObjetos);
+                console.log('Dados recebidos:', data.listObjetos);
             },
             (error) => {
                 console.error('Erro ao buscar dados:', error);
             }
         );
-
-        this.loadDemoData();
     }
 
-    statusEstoque(quantidade: number): string {
-        return quantidade > 0 ? 'Em estoque' : 'Sem estoque';
-      }
-
+    ObterCategorias() {
+        this.categoriaService.getCategorias()
+            .subscribe({
+                next: (data) => {
+                    console.log('Categorias recebidas do servidor:', data);
+                    this.categorias = data.listObjetos;
+                },
+                error: (err) => console.error('Erro ao carregar categorias', err)
+            });
+    }
 
     loadDemoData() {
 
         this.statuses = [
-            { label: 'INSTOCK', value: 'instock' },
+            { label: 'CCINSTOCK', value: 'instock' },
             { label: 'LOWSTOCK', value: 'lowstock' },
             { label: 'OUTOFSTOCK', value: 'outofstock' }
         ];
+
 
         this.cols = [
             { field: 'code', header: 'Code', customExportHeader: 'Product Code' },
@@ -200,11 +223,7 @@ export class EstoqueComponent implements OnInit {
     }
 
     createId(): string {
-        let id = '';
-        var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-        for (var i = 0; i < 5; i++) {
-            id += chars.charAt(Math.floor(Math.random() * chars.length));
-        }
+        let id = uuidv4();
         return id;
     }
 
@@ -222,18 +241,62 @@ export class EstoqueComponent implements OnInit {
     }
 
     saveProduct() {
+
+        //Atualizar objeto Categoria
+        let cat: Categoria | undefined;
+        const idx = this.categorias.findIndex(c => c.id === this.produto.categoria.id);
+        this.produto.categoria = this.categorias[idx];
+        this.produto.id_categoria = this.produto.categoria.id;
+
+        //Atualizar objeto Marca
+        // let marc: Marca | undefined;
+        // const idxM = this.marcas.findIndex(c => c.id === this.produto.marca.id);
+        // this.produto.marca = this.marcas[idxM];
+        // this.produto.id_marca = this.produto.marca.id;
+
+        console.warn(JSON.stringify(this.produto));
+
         this.submitted = true;
         let _products = this.produtos();
+
+        console.log(this.produto.marca.nome);
+        console.log(this.produto.categoria.nome);
+        console.log(this.produto.nome);
+        console.log(this.produto.precos.preco_pf);
+        console.log(this.produto.precos.preco_pj);
+        console.log(this.produto.custo.custo);
+        console.log(this.produto.estoque);
+
         if (this.produto.nome?.trim()) {
+            alert('Entrou na edicao produto');
+
             if (this.produto.id) {
-                _products[this.findIndexById(this.produto.id)] = this.produto;
-                this.produtos.set([..._products]);
-                this.messageService.add({
-                    severity: 'success',
-                    summary: 'Successful',
-                    detail: 'Product Updated',
-                    life: 3000
-                });
+                // <-- INÍCIO da lógica alterada para chamada de update
+                this.estoque.atualizarProduto(this.produto)
+                    .subscribe({
+                        next: updated => {
+                            const index = this.findIndexById(updated.id);
+                            _products[index] = updated;
+                            this.produtos.set([..._products]);
+                            this.messageService.add({
+                                severity: 'success',
+                                summary: 'Successful',
+                                detail: 'Product Updated',
+                                life: 3000
+                            });
+                            this.productDialog = false;
+                        },
+                        error: err => {
+                            console.error('Erro ao atualizar produto', err);
+                            this.messageService.add({
+                                severity: 'error',
+                                summary: 'Error',
+                                detail: 'Falha ao atualizar produto',
+                                life: 3000
+                            });
+                        }
+                    });
+                // <-- FIM da lógica alterada
             } else {
                 this.produto.id = this.createId();
                 this.produto.imagem_thumbnail = 'product-placeholder.svg';
@@ -244,11 +307,10 @@ export class EstoqueComponent implements OnInit {
                     life: 3000
                 });
                 this.produtos.set([..._products, this.produto]);
+                this.productDialog = false;
             }
-
-            this.productDialog = false;
-            this.produto = new Produto();
         }
     }
-
 }
+
+

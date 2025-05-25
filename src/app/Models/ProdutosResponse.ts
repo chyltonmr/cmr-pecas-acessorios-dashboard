@@ -77,7 +77,7 @@ export interface Categoria {
   
   // Interface da resposta paginada:
   export interface ProdutosResponse {
-    produtos: Produto[];
+    listObjetos: Produto[];
     totalItems: number;
     pageNumber: number;
     pageSize: number;

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
-import { ProdutosResponse } from '../../Models/ProdutosResponse';
+import { Produto, ProdutosResponse } from '../../Models/ProdutosResponse';
 
 
 
@@ -18,9 +18,17 @@ export class EstoqueService {
       pageNumber: pageNumber.toString(),
       pageSize: pageSize.toString()
     };
-    
+
     return this.http.get<ProdutosResponse>(`${environment.DOMINIO_API_CMR}/${environment.ENDPOINT_ESTOQUE}`,
       { params }
+    );
+  }
+
+  atualizarProduto(produto: Produto): Observable<Produto> {
+    // Supondo que produto.id seja o identificador único
+    return this.http.patch<Produto>(
+      `${environment.DOMINIO_API_CMR}/${environment.ENDPOINT_ESTOQUE}/${produto.id}`,
+      produto
     );
   }
 }

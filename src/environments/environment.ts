@@ -3,4 +3,5 @@ export const environment = {
   DOMINIO_API_CMR: '',
   DOMINIO_JSON_SERVER: '',
   ENDPOINT_ESTOQUE: '',
+  ENDPOINT_CATEGORIAS: '',
 };
