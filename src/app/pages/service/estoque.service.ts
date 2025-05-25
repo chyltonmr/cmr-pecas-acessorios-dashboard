@@ -27,7 +27,7 @@ export class EstoqueService {
   atualizarProduto(produto: Produto): Observable<Produto> {
     // Supondo que produto.id seja o identificador único
     return this.http.patch<Produto>(
-      `${environment.DOMINIO_API_CMR}/${environment.ENDPOINT_ESTOQUE}/${produto.id}`,
+      `${environment.DOMINIO_API_CMR}/${environment.ENDPOINT_ATUALIZAR_PRODUTO}/${produto.id}`,
       produto
     );
   }
