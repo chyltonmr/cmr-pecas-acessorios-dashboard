@@ -278,6 +278,8 @@ export class EstoqueComponent implements OnInit {
                         next: updated => {
                             const index = this.findIndexById(updated.id);
                             _products[index] = updated;
+                            console.log('RETORNO API NO UPDATE:');
+                            console.log(JSON.stringify(updated));
                             this.produtos.set([..._products]);
                             this.messageService.add({
                                 severity: 'success',
