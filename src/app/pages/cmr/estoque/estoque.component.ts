@@ -263,6 +263,7 @@ export class EstoqueComponent implements OnInit {
         console.log(this.produto.marca.nome);
         console.log(this.produto.categoria.nome);
         console.log(this.produto.nome);
+          console.log(this.produto.descricao);
         console.log(this.produto.precos.preco_pf);
         console.log(this.produto.precos.preco_pj);
         console.log(this.produto.custo.custo);
