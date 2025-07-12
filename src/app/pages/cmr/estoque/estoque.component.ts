@@ -23,6 +23,7 @@ import { EstoqueService } from '../../service/estoque.service';
 import { Categoria, Marca, Produto } from '../../../Models/ProdutosResponse';
 import { CategoriaService } from '../../service/categoria.service';
 import { v4 as uuidv4 } from 'uuid';
+import { MarcaService } from '../../service/MarcaService';
 
 
 interface Column {
@@ -90,7 +91,8 @@ export class EstoqueComponent implements OnInit {
         private messageService: MessageService,
         private confirmationService: ConfirmationService,
         private estoque: EstoqueService,
-        private categoriaService: CategoriaService
+        private categoriaService: CategoriaService,
+         private marcasService: MarcaService
     ) { }
 
     exportCSV() {
@@ -104,6 +106,8 @@ export class EstoqueComponent implements OnInit {
         this.ObterProdutos(1, 14);
 
         this.ObterCategorias();
+
+        this.ObterMarcas();
     }
 
     statusEstoque(quantidade: number): string {
@@ -122,6 +126,17 @@ export class EstoqueComponent implements OnInit {
         );
     }
 
+    ObterMarcas() {
+        this.marcasService.getMarcas()
+            .subscribe({
+                next: (data) => {
+                    console.log('Marcas recebidas do servidor:', data);
+                    this.marcas = data.listObjetos;
+                },
+                error: (err) => console.error('Erro ao carregar Marcas', err)
+            });
+    }
+
     ObterCategorias() {
         this.categoriaService.getCategorias()
             .subscribe({
@@ -129,7 +144,7 @@ export class EstoqueComponent implements OnInit {
                     console.log('Categorias recebidas do servidor:', data);
                     this.categorias = data.listObjetos;
                 },
-                error: (err) => console.error('Erro ao carregar categorias', err)
+                error: (err) => console.error('Erro ao carregar Categorias', err)
             });
     }
 
@@ -248,29 +263,19 @@ export class EstoqueComponent implements OnInit {
         this.produto.categoria = this.categorias[idx];
         this.produto.id_categoria = this.produto.categoria.id;
 
-        //TODO: DESCOMENTAR AQUI QUANDO JÁ TER FEITO ENDPOINT PARA RECUPERAR MARCAS. DESA FORMAM ESSA PROPRIEDADE 'marcas' ESTARÁ POPULADA
         //Atualizar objeto Marca
-        // let marc: Marca | undefined;
-        // const idxM = this.marcas.findIndex(c => c.id === this.produto.marca.id);
-        // this.produto.marca = this.marcas[idxM];
-        // this.produto.id_marca = this.produto.marca.id;
+        let marc: Marca | undefined;
+        const idxM = this.marcas.findIndex(c => c.id === this.produto.marca.id);
+        this.produto.marca = this.marcas[idxM];
+        this.produto.id_marca = this.produto.marca.id;
 
-        console.warn(JSON.stringify(this.produto));
+        console.log(`### OBJETO APOS EDICAO DOS PRODUTOS: ${JSON.stringify(this.produto)}`);
 
         this.submitted = true;
         let _products = this.produtos();
 
-        console.log(this.produto.marca.nome);
-        console.log(this.produto.categoria.nome);
-        console.log(this.produto.nome);
-          console.log(this.produto.descricao);
-        console.log(this.produto.precos.preco_pf);
-        console.log(this.produto.precos.preco_pj);
-        console.log(this.produto.custo.custo);
-        console.log(this.produto.estoque);
-
         if (this.produto.nome?.trim()) {
-            alert('Entrou na edicao produto');
+            alert('Entrou na edicao produto...');
 
             if (this.produto.id) {
                 // <-- INÍCIO da lógica alterada para chamada de update

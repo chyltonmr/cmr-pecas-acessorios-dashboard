@@ -138,10 +138,16 @@
         <div class="flex flex-col gap-6">
             <img [src]="'https://primefaces.org/cdn/primeng/images/demo/product/' + produto.imagem_thumbnail"
                 [alt]="produto.imagem_thumbnail" class="block m-auto pb-4" *ngIf="produto.imagem_thumbnail" />
-            <div>
+            <!-- <div>
                 <label for="name" class="block font-bold mb-3">Marca</label>
                 <input type="text" pInputText id="name" [(ngModel)]="produto.marca.nome" required autofocus fluid />
                 <small class="text-red-500" *ngIf="submitted && !produto.marca.nome">Name is required.</small>
+            </div> -->
+            <div>
+                <!-- {{produto.marca | json }} -->
+                <label for="inventoryStatus" class="block font-bold mb-3">Marca</label>
+                <p-select [(ngModel)]="produto.marca.id" inputId="inventoryStatus" [options]="marcas"
+                    optionLabel="nome" optionValue="id" placeholder="Select a Status" fluid />
             </div>
             <div>
                 <!-- {{produto.categoria | json }} -->

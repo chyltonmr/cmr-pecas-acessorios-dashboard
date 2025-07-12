@@ -5,4 +5,5 @@ export const environment = {
   ENDPOINT_ESTOQUE: '',
   ENDPOINT_ATUALIZAR_PRODUTO: '',
   ENDPOINT_CATEGORIAS: '',
+   ENDPOINT_MARCAS: '',
 };
